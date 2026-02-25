@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domain Pending Activation</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #fff;
+        text-align: center;
+    }
+
+    .container {
+        background: rgba(255,255,255,0.05);
+        padding: 50px;
+        border-radius: 20px;
+        backdrop-filter: blur(15px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        max-width: 600px;
+        width: 90%;
+        animation: fadeIn 1.2s ease-in-out;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .status-box {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 12px;
+        background: rgba(255, 87, 87, 0.15);
+        border: 1px solid rgba(255, 87, 87, 0.4);
+        font-size: 14px;
+    }
+
+    .status {
+        color: #ff5c5c;
+        font-weight: bold;
+    }
+
+    .footer {
+        margin-top: 30px;
+        font-size: 12px;
+        opacity: 0.6;
+    }
+
+    .countdown {
+        margin-top: 20px;
+        font-size: 13px;
+        opacity: 0.7;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(20px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+</style>
+
+<script>
+    let seconds = 5;
+    function countdown() {
+        const counter = document.getElementById("counter");
+        counter.innerText = seconds;
+        seconds--;
+        if (seconds < 0) {
+            window.location.href = "https://silverhawk.web.id";
+        } else {
+            setTimeout(countdown, 1000);
+        }
+    }
+    window.onload = countdown;
+</script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Website sedang dalam proses pemesanan<br>dan persiapan oleh <strong>Silverhawk Network</strong></h1>
+
+        <div class="status-box">
+            Status:<br>
+            <span class="status">Domain dan Hosting: Menunggu Pembayaran</span><br>
+            Aktivasi domain oleh registry (PANDI) akan diproses setelah pembayaran terverifikasi.
+        </div>
+
+        <div class="countdown">
+            Anda akan diarahkan ke website resmi Silverhawk Network dalam <span id="counter">5</span> detik...
+        </div>
+
+        <div class="footer">
+            © 2026 Silverhawk Network – All Rights Reserved
+        </div>
+    </div>
+</body>
+</html>
